@@ -1,18 +1,22 @@
-<table class="table table-striped">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Tipo</th>
-      <th scope="col">Region</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let cafe of cafes">
-      <th scope="row">{{ cafe.id }}</th>
-      <td>{{ cafe.nombre}}</td>
-      <td>{{ cafe.tipo }}</td>
-      <td>{{ cafe.region }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="col-lg-8 col-md-10 col-sm-12">
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Region</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cafe of cafes">
+        <th scope="row">{{ cafe.id }}</th>
+        <td>{{ cafe.nombre}}</td>
+        <td>{{ cafe.tipo }}</td>
+        <td>{{ cafe.region }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Contamos con {{ cafesOrigen }} variedades de Café de Origen</p>
+  <p>Contamos con {{ cafesBlend }} variedades de Blend</p>
+</div>

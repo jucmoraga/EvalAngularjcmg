@@ -11,14 +11,27 @@ export class CafesListComponent implements OnInit {
 
   constructor(private cafeservice: CafesService) { }
   
-  cafes: Array<Cafe> | undefined;
+  cafes: Array<Cafe> = [];
+  cafesOrigen: number = 0;
+  cafesBlend: number = 0;  
 
   obtenerCafes() {
     this.cafeservice.obtenerCafes().subscribe(cafes=> {
       this.cafes = cafes;
+      this.contarTipos();
     })
   }
 
+  contarTipos() {
+    for(let cafe of this.cafes){
+      if(cafe.tipo == "Café de Origen"){
+        this.cafesOrigen ++;
+      } else if (cafe.tipo == "Blend"){
+        this.cafesBlend ++;
+      }
+    }
+  }
+  
   ngOnInit() {
     this.obtenerCafes();
   }
